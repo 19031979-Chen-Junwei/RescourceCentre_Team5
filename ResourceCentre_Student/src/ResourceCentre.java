@@ -257,7 +257,40 @@ public class ResourceCentre {
 
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag){
 		boolean isReturned = false;
-		// write your code here
+
+		String S1 = tag;
+			int Y = 0;
+			int count = 0;
+			
+			for (  count =0 ; count <chromebookList.size() ; count ++) {
+				
+				if(chromebookList.get(count).getAssetTag().equalsIgnoreCase(S1)) {
+					chromebookList.get(count).setIsAvailable(true);
+					Y = 1;
+					
+				}
+				count +=1;
+			}
+			
+			
+			//the test :D
+			
+			if (chromebookList.get(count).getIsAvailable()==true) {
+				System.out.println("Chromebook is returned");
+				isReturned = true;
+			} else if(Y == 1){
+				System.out.println("invalid asset tag keyed in");
+			}
+			
+			
+			System.out.println("chomebook returned and is available?");
+			
+		
+			
+			
+		
+		
+		
 		return isReturned;
 	}
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
